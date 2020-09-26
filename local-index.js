@@ -9,8 +9,8 @@ async function main() {
 
 async function loadScans() {
     const response = await fetch('/api/scans');
+    console.log(response);
     const json = await response.json();
-
     for (let scan of json.scans) {
         entries.push(scan);
     }
