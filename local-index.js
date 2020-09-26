@@ -18,7 +18,7 @@ async function loadScans() {
 
 function displayScans() {
     for (let entry of entries) {
-        addScansToUI();
+        addScansToUI(entry);
     }
 }
 
