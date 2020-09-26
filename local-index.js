@@ -2,8 +2,18 @@ const entries = []
 
 main();
 
-function main() {
+async function main() {
+    await loadScans();
+    displayScans();
+}
 
+async function loadScans() {
+    const response = await fetch('/api/scans');
+    const json = await response.json();
+
+    for (let scan of json.scans) {
+        entries.push(scan);
+    }
 }
 
 function displayScans() {
@@ -23,7 +33,7 @@ function addScansToUI(entry) {
     scanColor.innerText = entry.color;
 
     const scanSpeed = document.createElement('td');
-    scanSpeed.innerText = entry.color;
+    scanSpeed.innerText = entry.speed;
 
     const scanTime = document.createElement('td');
     scanTime.innerText = entry.time;
