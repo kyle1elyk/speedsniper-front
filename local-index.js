@@ -56,8 +56,8 @@ function addScansToUI(entry) {
     scanTime.innerText = entry.time;
 
     rowEntry.appendChild(scanPlate);
-    rowEntry.appendChild(scanSpeed);
-    rowEntry.appendChild(scanColor);
+    // rowEntry.appendChild(scanSpeed);
+    // rowEntry.appendChild(scanColor);
     rowEntry.appendChild(scanTime);
 
     document.getElementById("scan-list").appendChild(rowEntry)

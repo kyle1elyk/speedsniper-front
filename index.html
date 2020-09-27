@@ -5,19 +5,35 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <style>
-      body {
-        background: #BBB;
-      }
-    </style>
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+      table  {
+        font-family: 'Courier New', Courier, monospace;
+      }
+      th,td {
+        width: 50%;
+        text-align:center;
+      }
+      
+    </style>
   </head>
   <body>
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <h1 class="display-4">PlateSniper</h1>
-        <p class="lead">Current list of recorded instances</p>
+          <div class="row">
+            <div class="col-md-2">
+              <img src="plate-sniper.svg" height="120px" width="200px">
+            </div>
+            <div class="col-md-9">
+                
+              <h1 class="display-4">PlateSniper</h1>
+              <p class="lead">Current list of recorded instances</p>
+            </div>
+          </div>
+          <!--<img src="plate-sniper.svg">-->
       </div>
     </div>
     <div class="container">
@@ -42,9 +58,9 @@
         <div class="tab-content">
           <div id="ll" class="container tab-pane active shadow p-3 mb-5 bg-white rounded"><br>
             <h3>License List</h3>
-            <p>
-              <table class="table">
-              <thead><tr><th scope="col">Plate</th><th scope="col">Speed</th><th scope="col">Color</th><th scope="col">Time</th></tr></thead>
+            <p class=" justify-content-center">
+              <table class="table justify-content-center">
+              <thead><tr><th scope="col">Plate</th><!--<th scope="col">Speed</th><th scope="col">Color</th>--><th scope="col">Time</th></tr></thead>
               <tbody id="scan-list">
   
               </tbody>

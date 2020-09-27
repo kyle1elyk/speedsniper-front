@@ -19,7 +19,7 @@ module.exports = async function (context, req) {
                     scans.push({plate:result[i].plate,
                         color:result[i].color,
                         speed:result[i].speed,
-                        time:result[i].time});
+                        time:new Date(result[i].time).toLocaleDateString() + " " + new Date(result[i].time).toLocaleTimeString()});
                     
                 }
                 
