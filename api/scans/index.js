@@ -4,10 +4,10 @@ module.exports = async function (context, req) {
     const mysql = require("mysql");
     
     var con = mysql.createConnection({
-        host: process.env["ConnectionStrings:host"],
-        user: process.env["ConnectionStrings:user"],
-        password: process.env["ConnectionStrings:password"],
-        database: process.env["ConnectionStrings:database"]
+        host: process.env["host"],
+        user: process.env["user"],
+        password: process.env["password"],
+        database: process.env["database"]
     });
 
     async function getMySQL() {
