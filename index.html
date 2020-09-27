@@ -5,28 +5,78 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <style>
-      body {
-        background: #BBB;
-      }
-    </style>
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+      table  {
+        font-family: 'Courier New', Courier, monospace;
+      }
+      th,td {
+        width: 50%;
+        text-align:center;
+      }
+      
+    </style>
   </head>
   <body>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+          <div class="row">
+            <div class="col-md-2">
+              <img src="plate-sniper.svg" height="120px" width="200px">
+            </div>
+            <div class="col-md-9">
+                
+              <h1 class="display-4">PlateSniper</h1>
+              <p class="lead">Current list of recorded instances</p>
+            </div>
+          </div>
+          <!--<img src="plate-sniper.svg">-->
+      </div>
+    </div>
     <div class="container">
-        <div class="jumbotron jumbotron-fluid">
-          <div class="container">
-            <h1 class="display-4">PlateSniper</h1>
-            <p class="lead">Current list of recorded instances</p>
+        
+        
+        <!-- Nav tabs -->
+        <div class="d-flex justify-content-center">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#ll">License List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#home">Home Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#busi">Business Services</a>
+          </li>
+        </ul>
+        </div>
+        <br>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div id="ll" class="container tab-pane active shadow p-3 mb-5 bg-white rounded"><br>
+            <h3>License List</h3>
+            <p class=" justify-content-center">
+              <table class="table justify-content-center">
+              <thead><tr><th scope="col">Plate</th><!--<th scope="col">Speed</th><th scope="col">Color</th>--><th scope="col">Time</th></tr></thead>
+              <tbody id="scan-list">
+  
+              </tbody>
+              </table>
+            </p>
+          </div>
+          <div id="home" class="container tab-pane fade shadow p-3 mb-5 bg-white rounded"><br>
+            <h3>Home Services</h3>
+            <p id="home_message">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div id="busi" class="container tab-pane fade shadow p-3 mb-5 bg-white rounded"><br>
+            <h3>Business Services</h3>
+            <p id="busi_message">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
           </div>
         </div>
-        <table class="table">
-            <thead><tr><th scope="col">Plate</th><th scope="col">Speed</th><th scope="col">Color</th><th scope="col">Time</th></tr></thead>
-            <tbody id="scan-list">
-
-            </tbody>
-        </table>
+        
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
