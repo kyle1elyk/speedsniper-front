@@ -1,18 +1,34 @@
-const entries = []
+const entries = [];
+const messages = {home:"", busi:""};
 
 main();
 
 async function main() {
     await loadScans();
+    await loadMessages();
     displayScans();
 }
 
 async function loadScans() {
     const response = await fetch('/api/scans');
-    console.log(response);
+    //console.log(response);
     const json = await response.json();
     for (let scan of json.scans) {
         entries.push(scan);
+    }
+}
+
+async function loadMessages() {
+    const response = await fetch('/api/checkMessages');
+    console.log(response);
+    const json = await response.json();
+    console.log(json)
+    if (json.messages[0].service == "Home") {
+        messages.home = json.messages[0];
+        messages.busi = json.messages[1];
+    } else {
+        messages.home = json.messages[1];
+        messages.busi = json.messages[0];
     }
 }
 
@@ -20,6 +36,7 @@ function displayScans() {
     for (let entry of entries) {
         addScansToUI(entry);
     }
+    addMessagesToUI();
 }
 
 function addScansToUI(entry) {
@@ -44,4 +61,10 @@ function addScansToUI(entry) {
     rowEntry.appendChild(scanTime);
 
     document.getElementById("scan-list").appendChild(rowEntry)
+}
+
+function addMessagesToUI() {
+    document.getElementById("home_message").innerHTML = messages.home.message;
+    document.getElementById("busi_message").innerHTML = messages.busi.message;
+
 }
